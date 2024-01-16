@@ -4,7 +4,7 @@ logo:
   url: /next.svg
   alt: NextJS
 links:
-  - header: Docs
+  - header: Docsss
     description: Find in-depth information about Next.js features and API.
     url: 'https://nextjs.org/docs?utm_source=create-next-app'
   - header: Learn
