@@ -15,10 +15,6 @@ export const PageCollection: Collection = {
       label: "Header",
     },
     {
-      name: 'test',
-      type: 'rich-text',
-    },
-    {
       type: "object",
       name: "logo",
       label: "Logo",
