@@ -6,7 +6,14 @@ export const PageCollection: Collection = {
   path: "content/pages",
   format: "md",
   ui: {
-    router: () => "/",
+    router: ({ document }) => {
+      console.log(document)
+      console.log(document._sys.filename === 'documentation')
+      if (document._sys.filename === 'documentation') {
+        return '/documentation'
+      }
+      return "/"
+    },
   },
   fields: [
     {
@@ -39,6 +46,24 @@ export const PageCollection: Collection = {
         { type: "string", name: "header" },
         { type: "string", name: "description" },
         { type: "string", name: "url" },
+        {
+          name: 'body',
+          type: 'rich-text',
+          isBody: true,
+          templates: [
+            {
+              name: 'SwaggerLink',
+              label: 'Ссылка на сваггер',
+              fields: [
+                {
+                  name: 'link',
+                  label: 'Ссылка',
+                  type: "string"
+                }
+              ]
+            }
+          ]
+        }
       ],
     },
   ],

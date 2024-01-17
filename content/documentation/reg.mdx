@@ -1,0 +1,13 @@
+---
+header: Система регистрации
+blocks:
+  - scenario: "## Регистрация абонента\n\n1. В файловое хранилище загружаются необходимые для регистрации документы. В ответ возвращаются метаданные по загруженным файлам.\n   Метод отправки запроса: [POST/files](https://test.platform.astral.ru/documentation?tab=2\\&dataIndex=1#post-files)<SwaggerLink />\n2. После загрузки документов в сервис регистрации (идентификатор сервиса –\"reg\") направляется запрос с событием по регистрации абонента (код события -\_[\"reg.request\"](https://test.platform.astral.ru/service/InternalRegistration?tab=2\\&categoryIndex=0\\&dataIndex=0#structureregrequest) В ответ на запрос возвращаются метаданные по событию.\n   Метод отправки запроса:[POST/events](https://test.platform.astral.ru/documentation?tab=2\\&dataIndex=0#post-events)\n"
+    _template: checklists
+  - string: >-
+      Внутренний основной сервис регистрации, который используется для
+      регистрации, изменения данных Пользователей в системе и
+      выпуска/перевыпуска УКЭП для использования в других сервисах Астрал
+      Платформы.
+    _template: desc
+---
+
