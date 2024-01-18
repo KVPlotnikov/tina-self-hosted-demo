@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { DocumentationQuery } from "../../tina/__generated__/types";
 import { Tabs } from '../common'
+import { EventTabs } from "./EventTabs";
 
 export const Documentation = (
   props: {
@@ -24,6 +25,10 @@ export const Documentation = (
 
   const checklists = useMemo(() => {
     return data?.documentation?.blocks?.find((block) => block?.__typename === "DocumentationBlocksChecklists")?.['scenario']
+  }, [data])
+
+  const structure = useMemo(() => {
+    return data?.documentation?.blocks?.find((block) => block?.__typename === "DocumentationBlocksEvents")?.['event']
   }, [data])
 
   return (
@@ -62,6 +67,12 @@ export const Documentation = (
             components={{
               SwaggerLink: (props) => <SwaggerLink props={props}/>
           }}
+          />
+        }
+        {
+          activeTab === 'sctructure' &&
+          <TinaMarkdown
+            content={structure}
           />
         }
       </div>

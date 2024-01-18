@@ -1,4 +1,6 @@
 import { Collection } from "tinacms";
+import { Record } from "immutable";
+import { boolean, string } from "yup";
 
 export const DocumentationCollection: Collection = {
   name: 'documentation',
@@ -55,6 +57,17 @@ export const DocumentationCollection: Collection = {
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          name: 'events',
+          label: 'Структура событий',
+          fields: [
+            {
+              name: 'event',
+              label: 'События',
+              type: 'rich-text'
             }
           ]
         }
