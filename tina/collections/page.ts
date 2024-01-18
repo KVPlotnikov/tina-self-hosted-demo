@@ -41,5 +41,9 @@ export const PageCollection: Collection = {
         { type: "string", name: "url" },
       ],
     },
+    {
+      name: 'test',
+      type: 'rich-text'
+    }
   ],
 };
