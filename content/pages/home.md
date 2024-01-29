@@ -1,5 +1,5 @@
 ---
-header: test logger
+header: 'test '
 logo:
   url: /next.svg
   alt: NextJS
