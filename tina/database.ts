@@ -1,6 +1,7 @@
 import { createDatabase, createLocalDatabase } from "@tinacms/datalayer";
 import { RedisLevel } from "upstash-redis-level";
 import { GitHubProvider } from "tinacms-gitprovider-github";
+import { GithubWrapper } from './githubWrapper'
 
 // Manage this flag in your CI/CD pipeline and make sure it is set to false in production
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
@@ -23,7 +24,7 @@ if (!branch) {
 export default isLocal
   ? createLocalDatabase()
   : createDatabase({
-      gitProvider: new GitHubProvider({
+      gitProvider: new GithubWrapper({
         branch,
         owner,
         repo,
