@@ -1,5 +1,5 @@
 ---
-header: Get Started by editing app/page/tsx
+header: test logger
 logo:
   url: /next.svg
   alt: NextJS
@@ -16,5 +16,6 @@ links:
   - header: Deploy
     description: Instantly deploy your Next.js site to a shareable URL with Vercel.
     url: 'https://vercel.com/new?utm_source=create-next-app'
+test: ''
 ---
 
